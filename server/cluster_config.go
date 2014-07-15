@@ -12,7 +12,7 @@ const (
 	MinActiveSize = 3
 
 	// DefaultRemoveDelay is the default elapsed time before removal.
-	DefaultRemoveDelay = float64((5 * time.Second) / time.Second)
+	DefaultRemoveDelay = float64((30 * time.Minute) / time.Second)
 
 	// MinRemoveDelay is the minimum remove delay allowed.
 	MinRemoveDelay = float64((2 * time.Second) / time.Second)
@@ -25,7 +25,6 @@ const (
 )
 
 // ClusterConfig represents cluster-wide configuration settings.
-// These settings can only be changed through Raft.
 type ClusterConfig struct {
 	// ActiveSize is the maximum number of node that can join as Raft followers.
 	// Nodes that join the cluster after the limit is reached are standbys.
